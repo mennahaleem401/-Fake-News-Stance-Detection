@@ -12,21 +12,21 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from PIL import Image
 
-# تحميل الموارد الخاصة بـ NLTK
+
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# تحميل الملفات
+
 model = load_model('model.h5')
 tokenizer = pickle.load(open('tokenizer.pkl', 'rb'))
 label_encoder = pickle.load(open('label_encoder.pkl', 'rb'))
 
-# إعدادات
+
 max_len = 1000
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
-# دالة تنظيف النصوص
+
 def clean_text(text):
     text = str(text).lower()
     text = contractions.fix(text)
@@ -114,4 +114,4 @@ if st.button("Predict"):
 
 # ========== Footer ==========
 
-st.markdown('<div class="footer">Made with ❤️ by Menna Halim</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer">Made with ❤️ by Menna Haleem</div>', unsafe_allow_html=True)
